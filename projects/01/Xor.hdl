@@ -1,0 +1,22 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/01/Xor.hdl
+
+/**
+ * Exclusive-or gate:
+ * out = not (a == b)
+ */
+//异或，技巧记忆就是加减法
+//判断两个数是否不相等
+//can use  nand, and, or, not
+CHIP Xor {
+    IN a, b;
+    OUT out;
+
+    PARTS:
+    // Put your code here:
+	Or (a = a, b = b, out = x);
+	Nand (a = a, b = b, out = y);
+	And (a = x, b = y, out = out);
+}
